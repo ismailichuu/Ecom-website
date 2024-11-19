@@ -1,0 +1,25 @@
+<section>
+    <h2 class="text-center m-5">Sign Up</h2>
+    <div class="container">
+        <form class="row g-3" action="/sign-up" method="post">
+            <div class="col-12">
+                <label for="inputAddress" class="form-label">Name</label>
+                <input type="text" class="form-control" name="name" placeholder="Name">
+            </div>
+            <div class="col-md-7">
+                <label for="inputEmail4" class="form-label">Email</label>
+                <input type="Email" class="form-control" placeholder="Email" name="email">
+            </div>
+            <div class="col-md-6">
+                <label for="inputPassword4" class="form-label">Password</label>
+                <input type="password" name="password" placeholder="Password" class="form-control" id="inputPassword4">
+            </div>
+            {{#if signupErr}}
+                <p class="text-center text-danger">{{this.signupErr}}</p>
+            {{/if}}
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+            </div>
+        </form>
+    </div>
+</section>

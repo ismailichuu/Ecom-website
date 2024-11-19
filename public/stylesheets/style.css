@@ -1,0 +1,35 @@
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: hsl(210 17% 89% / 2);
+    border-top: 1px solid hsl(210 17% 78% / 2);
+}
+
+.total{
+    margin: 1rem;
+}
+
+.right-content{
+    border: 1px solid #000;
+    margin: 2rem;
+    padding: 1.5rem 5rem;
+}
+
+.check-out{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.placed-text{
+    font-size: 4rem;
+}
+
+.view-order-link{
+    text-align: center;
+    font-size: 1.5rem;
+    padding-top: 1rem;
+}

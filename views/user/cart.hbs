@@ -1,0 +1,41 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <table class="table" id="cartItem">
+                <thead>
+                    <tr>
+                        <th scope="col">item</th>
+                        <th scope="col">title</th>
+                        <th scope="col">price</th>
+                        <th scope="col">quantity</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each products}}
+                        <tr>
+                            <th scope="row"><img src="/product-images/{{this.product._id}}.jpg" alt="{{this._id}}"
+                                    width="60rem"></th>
+                            <td>{{this.product.name}}</td>
+                            <td>₹{{this.product.price}}</td>
+                            <td><button class="btn btn-secondary px-1rem py-1" id="{{this.product._id}}button"
+                                    onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user._id}}',-1)">-</button>
+                                <span id="{{this.product._id}}">{{this.quantity}}</span>
+                                <button class="btn btn-secondary px-1rem py-1" id="inc"
+                                    onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user._id}}',1)">+</button>
+                            </td>
+                            <td><button class="btn btn-danger"
+                                    onclick="removeItem('{{this._id}}','{{this.product._id}}')">remove</button></td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <footer class="ft">
+        <div class="footer">
+            <h2 class="total">Total Amount : ₹<span id="total">{{totalAmount}}</span></h2>
+            <a href="/place-order"><button class="btn btn-success px-4 m-2 ">Place Order</button></a>
+        </div>
+    </footer>
+</section>

@@ -1,0 +1,33 @@
+<section>
+    <div>
+        <div class="row pt-5 text-center">
+            <table class="table" id="cartItem">
+                <thead>
+                    <tr>
+                        <th scope="col">item</th>
+                        <th scope="col">orderId</th>
+                        <th scope="col">quantity</th>
+                        <th scope="col">total price</th>
+                        <th scope="col">order status</th>
+                        <th scope="col"></th>
+                        <th scope="col">payment Method</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each orders}}
+                    <tr>
+                        <td scope="row"><img src="/product-images/{{this.item}}.jpg" alt="{{this.item}}" width="60rem">
+                        </td>
+                        <td>{{this._id}}</td>
+                        <td>{{this.quantity}}</td>
+                        <td>{{this.totalAmount}}</td>
+                        <td class="text-success">{{this.status}}</td>
+                        <td><button class="btn btn-success" onclick="toShip('{{this._id}}')">Ship Now</button></td>
+                        <td>{{this.paymentMethod}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
